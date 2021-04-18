@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/rate', function () {
+Route::get('', function () {
     return view('rate');
 });
 Route::post('rate', 'RateController@store');
