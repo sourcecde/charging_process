@@ -16,7 +16,7 @@
 $ php artisan key:generate
 $ php artisan serve
 ```
-- open http://127.0.0.1:8000 in your browser for graphical input
+- open http://127.0.0.1:8000/rate in your browser for graphical input
 
-## API Testing
+## API Testing (POSTMAN or any pther tools)
 -http://127.0.0.1:8000/api/rate
