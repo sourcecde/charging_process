@@ -20,3 +20,10 @@ $ php artisan serve
 
 ## API Testing (POSTMAN or any pther tools)
 - http://127.0.0.1:8000/api/rate
+- Json Data
+```
+{
+  "rate": { "energy": 0.3, "time": 2, "transaction": 1 },
+  "cdr": { "meterStart": 1204307, "timestampStart": "2021-04-05T10:04:00Z", "meterStop": 1215230, "timestampStop": "2021-04-05T11:27:00Z" }
+}
+```
