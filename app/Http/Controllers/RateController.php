@@ -29,23 +29,24 @@ class RateController extends Controller
 
     function store(Request $request)
     {
-        if($request->ajax()){
-        $input = $request->all();
-        $energy = $_POST['energy'];
-     $time = $_POST['time'];
-     $transaction = $_POST['transaction'];
-     $timestampStart = $_POST['timestampStart'];
-     $timestampStop = $_POST['timestampStop'];
-     $meterStart = $_POST['meterStart'];
-     $meterStop = $_POST['meterStop'];
+        if ($request->ajax()) {
+            $input = $request->all();
+            $energy = $_POST['energy'];
+            $time = $_POST['time'];
+            $transaction = $_POST['transaction'];
+            $timestampStart = $_POST['timestampStart'];
+            $timestampStop = $_POST['timestampStop'];
+            $meterStart = $_POST['meterStart'];
+            $meterStop = $_POST['meterStop'];
 
-     $array = array("rate" => array("energy" => $energy,  
-              "time" => $time,"transaction" => $transaction),
-              "cdr" => array( "meterStart" => $meterStart, "timestampStart" => $timestampStart,
-                                "meterStop" => $meterStop, "timestampStop" => $timestampStop ));
-     $body = json_encode( $data = $array );
- }
- else{$body = file_get_contents('php://input');}
+            $array = array("rate" => array("energy" => $energy,
+                "time" => $time, "transaction" => $transaction),
+                "cdr" => array("meterStart" => $meterStart, "timestampStart" => $timestampStart,
+                    "meterStop" => $meterStop, "timestampStop" => $timestampStop));
+            $body = json_encode($data = $array);
+        } else {
+            $body = file_get_contents('php://input');
+        }
 
         $object = json_decode($body, true);
         $new_arr = is_array($object) ? array_values($object) : array();
